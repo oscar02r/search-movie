@@ -8,3 +8,17 @@
   justify-content: center;
 }
 
+.MovieList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.MoviesList-item{
+  margin-bottom: 24px;
+  width: 48%;
+}
+
+
+
