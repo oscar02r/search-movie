@@ -6,7 +6,7 @@ export class SearchForm extends Component{
 
   _handleChange = (e)=>{
        this.setState({inputMovie:e.target.value})
-       //console.log(this.state.inputMovie)
+      
   }
 
   _handleSubmit = (e) =>{
@@ -15,10 +15,11 @@ export class SearchForm extends Component{
     fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
          .then(res => res.json())
          .then(results =>{
-              const { Search, totalResults } = results
+              const { Search = [], totalResults = 0 } = results
               console.log({Search, totalResults})
               this.props.onResults(Search)
          })
+         
   }
   
     render(){
